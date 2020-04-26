@@ -3,5 +3,5 @@ RUN sh -c 'set -eux; apt-get update; apt-get install -y libzip-dev zlib1g-dev; d
 COPY php.ini /usr/local/etc/php/php.ini
 COPY --chown=www-data dupinstall/ /var/www/html/
 RUN a2enmod rewrite
-RUN service apache2 restart
 COPY mod_rewrite.conf /etc/apache2/conf-enabled/
+RUN service apache2 restart
